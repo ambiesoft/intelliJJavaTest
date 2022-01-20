@@ -9,6 +9,10 @@ public class Main {
         runnable.run();
     }
     public static void main(String[] args) {
+        testLambda();
+        testStaticClass();
+    }
+    public static void testLambda() {
 	    System.out.println("Hello World!");
         testFunc(100);
 
@@ -18,5 +22,14 @@ public class Main {
         // msg = "Hello Lambda ver2!";
 
         runLambda(runner);
+    }
+    public static void testStaticClass() {
+        // static クラス
+        Outer.StaticInner staticInner1 = new Outer.StaticInner();
+        Outer.StaticInner staticInner2 = new Outer.StaticInner();
+
+        // 厳密的なメンバクラス
+        Outer outer = new Outer();
+        Outer.Inner inner = outer.new Inner();
     }
 }
